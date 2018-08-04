@@ -1,6 +1,6 @@
 <script type="text/javascript">
   var INDEX=0;
-    var accessToken = "86c9f0277aa2400483c2a68c6b92028d",
+    var accessToken = "033c607670ba481f816d80b78083e1c3",
       baseUrl = "https://api.api.ai/v1/",
       $speechInput,
       $recBtn,
