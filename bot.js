@@ -27,12 +27,12 @@
       });
     });
     function startRecognition() {
+      $("#mic").attr('src',"test2.gif");
       recognition = new webkitSpeechRecognition();
       recognition.continuous = false;
           recognition.interimResults = false;
       recognition.onstart = function(event) {
         respond(messageRecording);
-        updateRec();
       };
       recognition.onresult = function(event) {
         recognition.onend = null;
@@ -57,7 +57,7 @@
         recognition.stop();
         recognition = null;
       }
-      updateRec();
+      $("#mic").attr('src',"test3.svg");
     }
     function switchRecognition() {
       if (recognition) {
@@ -69,9 +69,6 @@
     function setInput(text) {
       $speechInput.val(text);
       send();
-    }
-    function updateRec() {
-      $recBtn.text(recognition ? "Stop" : "Speak");
     }
     function send() {
       var text = $speechInput.val();
@@ -118,7 +115,6 @@
       $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);
     }
     function generate_message(msg, type) {
-      console.log(type);
       INDEX++;
       var id = "cm-msg-"+INDEX;
       var str="";
@@ -139,4 +135,3 @@
       $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);
     }
   </script>
-  
